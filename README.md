@@ -1,2 +1,1 @@
-# live-site
-Our live site on our custom domain
+This is the official page of AIRCORE BEARINGS.

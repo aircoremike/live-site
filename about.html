@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Aircore Bearings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Aircore" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="main-content">
+    <section id="about-main" class="section-fade">
+      <!-- About page content placeholder -->
+      <div class="about">
+        <h1>About Us</h1>
+            <p>
+                At <strong>AIRCORE</strong>, we engineer and manufacture 
+                <strong>precision lightweight bearing balls</strong> designed to reduce system weight 
+                without compromising performance. Our products help improve the efficiency, responsiveness, 
+                and durability of mechanical assemblies across industries where every gram matters—whether 
+                in the sky, on the ground, or in motion.
+            </p>
+
+            <p>
+                Our mission is simple: deliver bearing components with advanced material solutions that 
+                outperform solid counterparts in <strong>weight-sensitive environments</strong>. From aerospace 
+                systems to robotics to high-speed automation, AIRCORE bearing balls help innovators 
+                push limits.
+            </p>
+
+            <p>
+                We combine <strong>proprietary forming techniques</strong> with 
+                <strong>AI-powered quality control</strong> to produce ultra-consistent, high-performance 
+                hollow balls in stainless steels, high carbon chromium steel, copper alloys, titanium, nickel alloys, tungsten-based materials, ceramics, and beyond. 
+                With a growing catalog of available sizes, wall thicknesses, and material combinations, 
+                we’re helping engineers optimize mass without sacrificing mechanical integrity.
+            </p>
+
+            <p>
+                At <strong>AIRCORE</strong>, we don’t just follow specs—we help redefine them. 
+                Let’s build lighter, smarter, and stronger together.
+            </p>      
+            <div style="display: flex; justify-content: center; margin-top: 2rem; width: 100%;">
+              <a href="contact.html" class="contact-btn" style="display: inline-block;">Contact Us</a>
+            </div>
+    </div>
+    </section>
+  </div>
+  <div id="footer-container"></div>
+  <script src="script.js"></script>
+  <script>
+    function loadPartial(id, url, callback) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+          if (callback) callback();
+        });
+    }
+    loadPartial('navbar-container', 'navbar.html', function() {
+      if (window.initNavbarScripts) window.initNavbarScripts();
+    });
+    loadPartial('footer-container', 'footer.html');
+  </script>
+</body>
+</html>

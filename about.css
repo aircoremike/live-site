@@ -1,0 +1,72 @@
+/* about.css: Additional styles for the About page */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  text-align: left;
+  color: #f5f5f7;
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
+  margin: 2rem auto 2.5rem auto;
+  border-radius: 1.25rem;
+  max-width: 1000px;
+}
+
+.about h1 {
+  color: #f5f5f7;
+  font-size: 2.8rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.about p {
+  color: #f5f5f7;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  align-items: flex-start;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 0 1.2em 0;
+  box-sizing: border-box;
+  word-break: break-word;
+  opacity: 1;
+  text-align: left;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #1e90ff 0%, #00c6fb 100%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.15);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 1.5rem;
+}
+
+.contact-btn:hover, .contact-btn:focus {
+  background: linear-gradient(90deg, #00c6fb 0%, #1e90ff 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 18px rgba(30,144,255,0.25);
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+    max-width: 98vw;
+  }
+  .about h1 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 1rem;
+    max-width: 98vw;
+  }
+}

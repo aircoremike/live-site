@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Aircore Bearings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources.css">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Aircore" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="main-content">
+    <main>
+      <section id="resources" class="resources section-fade">
+        <h1>Technical Resources &amp; White Papers</h1>
+        <!-- When adding new resources ensure that the js is updated to 
+        include the new resource so that the navbar continues to highlight the "resources" link -->
+        <div class="resources-grid">
+          <div class="resource-card">
+            <img src="assets/passivation-necessary-stainless-steel-balls-2025.svg" alt="Passivation White Paper Thumbnail" class="resource-thumb">
+            <div class="resource-info">
+              <a href="passivation-paper.html" class="resource-title">Passivation: Is It Really Necessary for Stainless Steel Balls?</a>
+              <a href="passivation-paper.html" class="resource-btn">Read White Paper</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="footer-container"></div>
+  <script src="script.js"></script>
+  <script>
+    function loadPartial(id, url, callback) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+          if (callback) callback();
+        });
+    }
+    loadPartial('navbar-container', 'navbar.html', function() {
+      if (window.initNavbarScripts) window.initNavbarScripts();
+    });
+    loadPartial('footer-container', 'footer.html');
+  </script>
+</body>
+</html>

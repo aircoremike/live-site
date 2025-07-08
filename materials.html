@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircore Bearings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="materials.css">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Aircore" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="main-content">
+    <section id="materials-hero" class="materials-hero section-fade">
+      <h1>Materials</h1>
+      <p>
+        Aircore Bearings has developed a proprietary manufacturing process that enables the bonding of 
+        materials once considered unweldable. This approach delivers greater stability and a more uniform, 
+        balanced structure than traditional welding methods. No other supplier offers hollow balls in 
+        such a broad range of materials with the same level of quality. <strong>Browse our material library below.</strong>
+      </p>
+    </section>
+    <div class="materials-carousel-bg">
+      <div class="materials-carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide" data-slide="0">
+            <div class="slide-content">
+              <div class="slide-text">
+                <div class="slide-title">
+                  <h2>Stainless Steel</h2>
+                </div>
+                <div class="slide-desc">
+                  <p>High-strength, corrosion-resistant steels designed for bearings in demanding environments.</p>
+                </div>
+                <button class="learn-more-btn" data-modal-target="steelModal">Learn More</button>
+              </div>
+              <div class="slide-image">
+                <img src="assets/stainless.png" alt="Steel">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide" data-slide="1">
+            <div class="slide-content">
+              <div class="slide-text">
+                <div class="slide-title">
+                  <h2>High Carbon Chrome</h2>
+                </div>
+                <div class="slide-desc">
+                  <p>Reliable hardness and wear resistance, high load capacity, and tight dimensional stability
+                     for precision bearing systems.</p>
+                </div>
+              </div>
+              <div class="slide-image">
+                <img src="assets/highcarbonchrome.png" alt="High Carbon Chrome Steel">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide" data-slide="2">
+            <div class="slide-content">
+              <div class="slide-text">
+                <div class="slide-title">
+                  <h2>Titanium</h2>
+                </div>
+                <div class="slide-desc">
+                  <p>Remarkable strength-to-weight ratio, excellent corrosion resistance, and superior fatigue life.</p>
+                </div>
+              </div>
+              <div class="slide-image">
+                <img src="assets/titanium.png" alt="Titanium">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide" data-slide="3">
+            <div class="slide-content">
+              <div class="slide-text">
+                <div class="slide-title">
+                  <h2>Copper</h2>
+                </div>
+                <div class="slide-desc">
+                  <p>Exceptional electrical and thermal conductivity, excellent formability, 
+                    and inherent antimicrobial properties. </p>
+                </div>
+              </div>
+              <div class="slide-image">
+                <img src="assets/copper.png" alt="Copper">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide" data-slide="4">
+            <div class="slide-content">
+              <div class="slide-text">
+                <div class="slide-title">
+                  <h2>Nickel Alloy</h2>
+                </div>
+                <div class="slide-desc">
+                  <p>Superior thermal and chemical stability, excellent fatigue resistance, 
+                    and performance retention in extreme environments.</p>
+                </div>
+              </div>
+              <div class="slide-image">
+                <img src="assets/nickelalloy.png" alt="Nickel Alloys">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide" data-slide="5">
+            <div class="slide-content">
+              <div class="slide-text">
+                <div class="slide-title">
+                  <h2>Tungsten</h2>
+                </div>
+                <div class="slide-desc">
+                  <p>Outstanding density and strength, extreme heat resistance, 
+                    and excellent wear and creep performance.</p>
+                </div>
+              </div>
+              <div class="slide-image">
+                <img src="assets/tungsten.png" alt="Tungsten">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-arrows">
+          <button class="carousel-arrow carousel-arrow-left" id="carouselArrowLeft" aria-label="Previous slide"><span>&#8249;</span></button>
+          <button class="carousel-arrow carousel-arrow-right" id="carouselArrowRight" aria-label="Next slide"><span>&#8250;</span></button>
+        </div>
+      </div>
+    </div>
+    <!-- Stainless Steel Modal (now a section, not a div with overlay) -->
+    <section class="modal" id="steelModal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+        <h2>Stainless Steel Details</h2>
+        <div class="checkerboard">
+          <div class="checker-item checker-img"><img src="assets/c5-galaxy_1280.jpg" alt="C-5 Galaxy"></div>
+          <div class="checker-item checker-img"><img src="assets/c17-globemaster-iii_1280.jpg" alt="C-17 Globemaster"></div>
+          <div class="checker-item checker-img"><img src="assets/pallet-drop_1280.jpg" alt="Packet Drop"></div>
+          <div class="checker-item">Corrosion Resistance</div>
+          <div class="checker-item">High Strength</div>
+          <div class="checker-item">Precision Engineering</div>
+          <div class="checker-item">Applications: Aerospace, Medical, Industrial</div>
+          <div class="checker-item">Grades: 440C, 304, 316, 630, and more</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="footer-container"></div>
+  <div id="site-overlay" class="overlay"></div>
+  <script src="script.js"></script>
+  <script>
+    function loadPartial(id, url, callback) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+          if (callback) callback();
+        });
+    }
+    loadPartial('navbar-container', 'navbar.html', function() {
+      if (window.initNavbarScripts) window.initNavbarScripts();
+    });
+    loadPartial('footer-container', 'footer.html');
+  </script>
+</body>
+</html>

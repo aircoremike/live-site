@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircore Bearings</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Aircore" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="main-content">
+    <section id="home" class="home-flex">
+        <div class="hero-flex">
+          <img src="assets/index_hero_landscape.jpg" alt="Aircore Bearings Hero" class="hero-img" />
+          <h1>Take Off Without the Trade-Off.</h1>
+        </div>
+        <div class="body-flex">
+          <div class="body-rows-flex">
+            <p>Solid, but heavy. Most large bearing balls offer strength
+              you’ll never use — at a cost you shouldn’t have to pay. Ready to rethink the standard?</p>
+            <p>Designed specifically for weight-sensitive applications, 
+              Aircore’s hollow bearing balls combine strength, precision, and reduced mass. 
+              Like our 440C stainless steel variant — engineered for the 
+              unique operational demands of air freighters.</p>
+            <p>Aircore hollow bearing balls are available 
+              in a broad selection of metal and ceramic materials, with customizable sizes, 
+              grades, and wall thicknesses to match your application’s exact load and weight specifications.</p>
+          </div>
+        </div>
+        <div class="applications-section-flex section-fade">
+          <div class="applications-heading"><h2>Applications</h2></div>
+          <div class="applications-list">
+            <div class="application-item">
+              <div class="application-icon-title">
+                <img src="assets/plane_white.svg" alt="Plane icon" class="application-icon" />
+                <span class="application-title">Aerospace</span>
+              </div>
+              <span class="application-desc">Ball Transfer Units (Omnidirectional Bearings)</span>
+            </div>
+            <div class="application-item">
+              <div class="application-icon-title">
+                <img src="assets/drone_white.svg" alt="Drone icon" class="application-icon" />
+                <span class="application-title">Defense</span>
+              </div>
+              <span class="application-desc">UAVs and UGVs, Shaped Charges, Penetrators</span>
+            </div>
+            <div class="application-item">
+              <div class="application-icon-title">
+                <img src="assets/racecar_white.svg" alt="Racecar icon" class="application-icon" />
+                <span class="application-title">Automotive</span>
+              </div>
+              <span class="application-desc">CV Joints, Ball Plungers, Ball Detent Clutches</span>
+            </div>
+            <div class="application-item">
+              <div class="application-icon-title">
+                <img src="assets/oil_white.svg" alt="Oil & Gas icon" class="application-icon" />
+                <span class="application-title">Oil & Gas</span>
+              </div>
+              <span class="application-desc">Rotary Seals and Couplings, PDC & Roller Cone Bits, Ball Check Valves</span>
+            </div>
+          </div>
+        </div>
+        <div class="advantages-flex section-fade">
+          <h2 class="advantages-heading">Aircore Advantages</h2>
+          <ul class="advantages-list">
+            <li>Load capacity and bearing weight can be customized by adjusting the wall thickness</li>
+            <li>Wide variety of available materials including exotic metals and ceramics</li>
+            <li>Homogenous microstructures</li>
+            <li>Tight weight tolerances</li>
+            <li>Quality inspection at each stage of production</li>
+            <li>Produced in a AS9100 facility</li>
+            <li>Offering a wide selection of both hollow and solid bearing balls</li>
+          </ul>
+        </div>
+        <div class="body-about-short section-fade">
+            <div class="body-about-short-heading"><h2>Weight: Cut.  Corners: Never.</h2></div>
+            <p>Backed by over 5 years of process development and AI-enabled quality control, 
+              we’re setting new standards in lightweight bearing ball production. 
+              Every batch is rigorously tested for roundness, hardness, and load 
+              capacity to meet the exacting specifications of our customers.</p>
+        </div>
+      </section>
+    <section id="about" class="section-fade">
+        <!-- About section content -->
+    </section>
+    <section id="services" class="section-fade">
+        <!-- Services section content -->
+    </section>
+    <section id="contact" class="section-fade">
+        <!-- Contact section content -->
+        <div class="contact-section-flex">
+          <div class="contact-text-flex">
+            <h2>Contact Us</h2>
+            <p>Ready to learn more? Whether you'd like to request a quote 
+              or discuss a specific engineering challenge, we are excited to collaborate with you!<br>
+            <br>
+            Please fill out the form below and we will respond as soon as we can. Thank you!</p>
+          </div>
+          <form class="contact-form-flex" action="https://formsubmit.co/471444cd7d3573fe9b08c03ba734d18a" method="POST">
+            <input type="hidden" name="_next" value="https://aircoremike.github.io/thankyou">
+            <input type="hidden" name="_captcha" value="true">
+            <div class="form-row-flex">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row-flex">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row-flex">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+    </section>
+  </div>
+  <div id="footer-container"></div>
+  <script src="script.js"></script>
+  <script>
+    // Inject navbar and footer partials, then re-initialize navbar JS
+    function loadPartial(id, url, callback) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+          if (callback) callback();
+        });
+    }
+    // Load navbar, then re-run navbar-dependent JS
+    loadPartial('navbar-container', 'navbar.html', function() {
+      if (window.initNavbarScripts) window.initNavbarScripts();
+    });
+    loadPartial('footer-container', 'footer.html');
+  </script>
+</body>
+</html>

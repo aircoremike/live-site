@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Aircore Bearings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Aircore" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="main-content">
+    <section id="contact" class="section-fade">
+      <h1>Contact Us</h1>
+      <div class="contact-section-flex">
+        <div class="contact-text-flex">
+          <p>Ready to learn more? Whether you'd like to request a quote 
+            or discuss a specific engineering challenge, we are excited to collaborate with you!<br>
+          <br>
+          Please fill out the form below and we will respond as soon as we can. Thank you!</p>
+        </div>
+        <form class="contact-form-flex" action="https://formsubmit.co/471444cd7d3573fe9b08c03ba734d18a" method="POST">
+          <input type="hidden" name="_next" value="https://aircoremike.github.io/thankyou.html">
+          <input type="hidden" name="_captcha" value="true">
+          <div class="form-row-flex">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row-flex">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row-flex">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <div id="footer-container"></div>
+  <script src="script.js"></script>
+  <script>
+    function loadPartial(id, url, callback) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+          if (callback) callback();
+        });
+    }
+    loadPartial('navbar-container', 'navbar.html', function() {
+      if (window.initNavbarScripts) window.initNavbarScripts();
+    });
+    loadPartial('footer-container', 'footer.html');
+  </script>
+</body>
+</html>
