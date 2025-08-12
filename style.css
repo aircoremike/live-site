@@ -10,6 +10,43 @@
   --logo-padding-mobile: 8px;
   --navbar-height-desktop: calc(var(--logo-height-desktop) + 2 * var(--logo-padding));
   --navbar-height-mobile: calc(var(--logo-height-mobile) + 2 * var(--logo-padding-mobile));
+  --content-top-spacing-desktop: 2.5rem; /* Standard spacing between navbar and h1 on desktop */
+  --content-top-spacing-mobile: 3rem; /* Standard spacing between navbar and h1 on mobile */
+  --h1-font-size-desktop: 2.5rem; /* Standard h1 font size for desktop */
+  --h1-font-size-mobile: 2rem; /* Standard h1 font size for mobile */
+  --p-font-size-desktop: 1.5rem; /* Standard paragraph font size for desktop */
+  --p-font-size-mobile: 1.2rem; /* Standard paragraph font size for mobile */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, -30%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-flex h1.fade-in {
+  animation: fadeIn 1s ease-out forwards, slideUp 1s ease-out forwards;
 }
 
 html {
@@ -421,13 +458,13 @@ body {
 }
 
 @media (max-width: 768px) {
-  h1 {
+  .hero-flex h1 {
     font-size: 1.4rem !important;
     top: 36% !important;
   }
 }
 @media (min-width: 769px) and (orientation: portrait){
-  h1 {
+  .hero-flex h1 {
     font-size: 3rem !important;
     top: 38% !important;
   }
@@ -465,7 +502,7 @@ body {
 .body-rows-flex p {
   color: #f5f5f7;
   max-width: 800px;
-  font-size: 1.5rem;
+  font-size: var(--p-font-size-desktop);
   line-height: 1.7;
   margin: 0;
   padding: 1rem 1.5rem;
@@ -571,7 +608,7 @@ body {
 
 .advantages-list {
   color: #f5f5f7;
-  font-size: 1.2rem;
+  font-size: var(--p-font-size-desktop);
   max-width: 800px;
   width: 100%;
   padding: 1.5rem 2rem;
@@ -588,7 +625,7 @@ body {
   margin-bottom: 0.8rem;
   width: 100%;
   max-width: 800px;
-  font-size: 1.5rem;
+  font-size: var(--p-font-size-desktop);
   padding-left: 1em;
 }
 
@@ -606,7 +643,7 @@ body {
 
 .body-about-short {
   color: #f5f5f7;
-  font-size: 1.5rem;
+  font-size: var(--p-font-size-desktop);
   line-height: 1.7;
   max-width: 800px;
   width: 100%;
@@ -646,7 +683,7 @@ body {
 }
 
 .contact-text-flex p {
-  font-size: 1.5rem;
+  font-size: var(--p-font-size-desktop);
   line-height: 1.7;
   margin: 0;
   max-width: 800px;
@@ -689,23 +726,6 @@ body {
 .contact-form-flex textarea:focus {
   outline: 2px solid #4fa3ff;
   border-color: #4fa3ff;
-}
-
-.contact-form-flex button[type="submit"] {
-  background: #132D3E;
-  color: #f5f5f7;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  padding: 0.9rem 0;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  transition: background 0.2s;
-}
-
-.contact-form-flex button[type="submit"]:hover {
-  background: #357fd6;
 }
 
 /* =====================
@@ -785,11 +805,8 @@ body {
   .body-about-short,
   .application-text,
   .advantages-list li,
-  .contact-text-flex p,
-  .contact-form-flex label,
-  .contact-form-flex input,
-  .contact-form-flex textarea {
-    font-size: 1rem !important;
+  .contact-text-flex p {
+    font-size: var(--p-font-size-mobile);
   }
   .heading-flex h2,
   .applications-heading h2,
@@ -806,4 +823,48 @@ body {
     max-width: 60px;
     height: auto;
   }
+}
+
+/* =====================
+   Button Styles
+   ===================== */
+
+.contact-form-flex button[type="submit"] {
+  background: linear-gradient(90deg, #1e90ff 0%, #00c6fb 100%);
+  color: #f5f5f7;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2em;
+  padding: 0.9rem 0;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.15);
+  transition: box-shadow 0.2s;
+}
+
+.contact-form-flex button[type="submit"]:hover {
+  background: linear-gradient(90deg, #00c6fb 0%, #1e90ff 100%);
+  color: #f5f5f7;
+  box-shadow: 0 4px 18px rgba(30,144,255,0.25);
+}
+
+.contact-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #1e90ff 0%, #00c6fb 100%);
+  color: #f5f5f7;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.15);
+  transition: box-shadow 0.2s;
+  margin-top: 1.5rem;
+}
+
+.contact-btn:hover, .contact-btn:focus {
+  background: linear-gradient(90deg, #00c6fb 0%, #1e90ff 100%);
+  color: #f5f5f7;
+  box-shadow: 0 4px 18px rgba(30,144,255,0.25);
 }

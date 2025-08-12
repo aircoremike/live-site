@@ -1,8 +1,10 @@
 Tasks
     - Global Edits:
 
+    - Home page
+
     - Materials page
-        - Learn more buttons and specs
+        - Per material spec pages
 
     - Research page
         - white papers:

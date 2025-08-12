@@ -1,7 +1,7 @@
 /* resources.css - Additional styles for the Resources page */
 
 .resources {
-  padding: 3rem 1.5rem 4rem 1.5rem;
+  padding: 0 1.5rem 4rem 1.5rem;
   max-width: 900px;
   margin: 0 auto;
   min-height: 60vh;
@@ -12,8 +12,10 @@
 }
 
 .resources h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
+  font-size: var(--h1-font-size-desktop);
+  line-height: 1.2;
+  margin: var(--content-top-spacing-desktop) 0 2.5rem 0;
+  padding: 0;
   color: var(--primary-text, #f5f5f7);
   letter-spacing: 0.04em;
   text-align: center;
@@ -110,7 +112,7 @@
   align-items: center;
 }
 .white-paper h1 {
-  font-size: 2.1rem;
+  font-size: var(--h1-font-size-desktop);
   color: var(--primary-text, #f5f5f7);
   margin-bottom: 2.2rem;
   text-align: center;
@@ -189,12 +191,6 @@
 }
 
 @media (max-width: 900px) {
-  .resources {
-    padding: 2rem 0.5rem 3rem 0.5rem;
-  }
-  .resources h1 {
-    font-size: 2rem;
-  }
   .resources-grid {
     gap: 1.2rem;
   }
@@ -204,13 +200,20 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .resources {
-    padding: 1.2rem 0.2rem 2rem 0.2rem;
+    padding: 0 0.5rem 3rem 0.5rem;
   }
   .resources h1 {
-    font-size: 1.3rem;
+    font-size: var(--h1-font-size-mobile) !important;
+    line-height: 1.2;
+    margin: var(--content-top-spacing-mobile) 0 2rem 0;
+    padding: 0;
   }
+}
+
+@media (max-width: 600px) {
+  /* Remove h1 font-size rule - let the 768px mobile variable handle it */
   .resources-grid {
     flex-direction: column;
     gap: 1rem;

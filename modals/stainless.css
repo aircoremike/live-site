@@ -1,0 +1,333 @@
+/* =====================
+   Stainless Steel Modal Styles
+   Specific styling for the stainless steel modal
+   ===================== */
+
+/* Import base modal styles */
+@import url('base-modal.css');
+
+/* Stainless Steel specific colors and styling */
+#stainless-modal {
+  --modal-highlight: #86868B;
+  --modal-accent: #e8e8e8;
+}
+
+/* Override base modal container padding for stainless modal - REMOVED as now handled in base */
+#stainless-modal .modal-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#stainless-modal .modal-hero-text h2{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#stainless-modal .modal-hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* First modal image item with text layout - Air cargo deck */
+#stainless-modal .modal-image-item:first-child {
+  display: flex;
+  flex-direction: row; /* Changed from row-reverse to row */
+  gap: 30px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+  align-items: center;
+}
+
+#stainless-modal .modal-image-item:first-child img {
+  height: 200px; /* Match other image items' height */
+  min-height: 80vh; /* Minimum height of 80vh */
+  width: auto;
+  object-fit: cover; /* Match other image items' object-fit */
+  border-radius: 12px;
+  flex-shrink: 0;
+  align-self: center;
+  max-width: 45%; /* Reduced to give more space to text */
+  order: 2; /* Image on the right in desktop */
+}
+
+#stainless-modal .modal-image-item:first-child .text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 1; /* Text content on the left */
+  padding: 0 20px;
+}
+
+#stainless-modal .modal-image-item:first-child p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+  overflow: visible;
+  width: 100%;
+}
+
+#stainless-modal .modal-image-item:first-child h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+#stainless-modal .modal-image-item:first-child p strong {
+  display: inline;
+}
+
+
+
+/* Second item: Loading air cargo (image left, text right) */
+#stainless-modal .modal-image-item:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#stainless-modal .modal-image-item:nth-child(2) img {
+  order: 1;
+  flex: 1;
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#stainless-modal .modal-image-item:nth-child(2) p {
+  order: 2;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  align-self: center;
+}
+
+#stainless-modal .modal-image-item:nth-child(2) p strong {
+  display: inline;
+}
+
+/* Third item: C17 (text left, image right) */
+#stainless-modal .modal-image-item:nth-child(3) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#stainless-modal .modal-image-item:nth-child(3) img {
+  order: 2;
+  flex: 1;
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#stainless-modal .modal-image-item:nth-child(3) p {
+  order: 1;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  align-self: center;
+}
+
+/* Fourth item: Pallet drop (image left, text right) */
+#stainless-modal .modal-image-item:nth-child(4) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#stainless-modal .modal-image-item:nth-child(4) img {
+  order: 1;
+  flex: 1;
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#stainless-modal .modal-image-item:nth-child(4) p {
+  order: 2;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  align-self: center;
+}
+
+/* Desktop grades - 3 columns with 2 rows */
+#stainless-modal .grade-column:nth-child(1) {
+  order: 1;
+}
+#stainless-modal .grade-column:nth-child(2) {
+  order: 2;
+}
+#stainless-modal .grade-column:nth-child(3) {
+  order: 3;
+}
+
+/* Ensure proper alignment for stainless modal grades section */
+#stainless-modal .material-info .grades-section {
+  align-items: flex-start;
+}
+
+#stainless-modal .grade-columns {
+  justify-content: flex-start;
+}
+
+#stainless-modal .grades-section h3 {
+  text-align: left;
+}
+
+/* Phone Modal Styles */
+
+@media (max-width: 768px) {
+/* Override modal overlay padding to have only 10px on each side */
+#stainless-modal.modal-overlay {
+    padding: 10px 10px 5px 10px !important;
+}
+
+/* Make h2 larger */
+#stainless-modal .modal-hero-text h2 {
+    font-size: 1.5rem !important;
+}
+
+/* Make h3 larger */
+#stainless-modal .modal-image-item:first-child h3 {
+    font-size: 1.4rem !important;
+}
+
+#stainless-modal .modal-hero-image {
+    max-height: 50vh;
+    min-height: 20vh;
+    padding: 0 !important; /* No padding on image container */
+}
+
+/* Mobile layout for all modal image items - image above, text below */
+#stainless-modal .modal-image-item {
+    flex-direction: column !important;
+    gap: 16px;
+    padding: 0 10px; /* Consistent 10px padding */
+}
+
+#stainless-modal .modal-image-item:not(:first-child) img {
+    order: 1 !important;
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    max-width: 100%; /* Ensure images fit inside modal container */
+}
+
+#stainless-modal .modal-image-item:not(:first-child) p {
+    padding: 0 !important; /* Remove extra padding since parent has consistent padding */
+}
+
+/* Override for first-child image to be 90vh on mobile */
+#stainless-modal .modal-image-item:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px; /* Standard spacing like other modal items */
+    padding: 0 10px; /* Consistent 10px padding */
+    overflow: visible; /* Ensure nothing gets cut off */
+    align-items: flex-start;
+}
+
+#stainless-modal .modal-image-item:first-child .text-content {
+    width: 100%;
+    display: contents; /* Allow children to participate in parent's flex layout */
+}
+
+#stainless-modal .modal-image-item:first-child h3 {
+    order: 1 !important; /* H3 first */
+    width: 100%;
+    margin-bottom: 1rem; /* Standard spacing */
+    padding: 0 !important;
+}
+
+#stainless-modal .modal-image-item:first-child img {
+    order: 2 !important; /* Image second */
+    height: auto !important; /* Let aspect ratio determine height */
+    min-height: 90vh !important; /* Minimum 90vh height */
+    object-fit: cover !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0; /* No extra margin */
+    aspect-ratio: 9/16 !important; /* Tall aspect ratio */
+}
+
+#stainless-modal .modal-image-item:first-child p {
+    order: 3 !important; /* Paragraph third */
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important; /* No extra margin */
+}
+
+#stainless-modal .modal-image-item:not(:first-child) p,
+#stainless-modal .modal-image-item:not(:first-child) .grades-section {
+    order: 2 !important;
+    flex: none;
+    align-self: flex-start !important;
+}
+
+/* Mobile stainless-specific overrides */
+
+/* Mobile override: show only first 2 columns, hide 3rd */
+#stainless-modal .grade-column:nth-child(3) {
+    display: none !important;
+}
+
+/* Mobile: add missing grades to first two columns with consistent spacing */
+#stainless-modal .grade-column:nth-child(1)::after {
+    content: "302";
+    display: block;
+    /* Remove margin-top to match the gap spacing */
+}
+#stainless-modal .grade-column:nth-child(2)::after {
+    content: "304";
+    display: block;
+    /* Remove margin-top to match the gap spacing */
+}
+}
+
+/* Tablet Modal Styles */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* Tablet-specific styles go here */
+  #stainless-modal .modal-hero {
+    flex-direction: row;
+    text-align: left;
+  }
+  #stainless-modal .modal-hero-text,
+  #stainless-modal .modal-hero-image {
+    width: 50%;
+    margin: 0;
+  }
+  #stainless-modal .modal-hero-image {
+    max-height: 40vh;
+    min-height: 20vh;
+  }
+}

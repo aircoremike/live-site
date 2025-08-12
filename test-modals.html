@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials Modal Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #f5f5f7;
+        }
+        .test-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .test-btn {
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .test-btn:hover {
+            background: #0056b3;
+        }
+        .status {
+            background: #1d1d1f;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Materials Modal System Test</h1>
+    
+    <div class="status">
+        <h3>Status:</h3>
+        <p id="status-text">Loading modals...</p>
+    </div>
+    
+    <div class="test-buttons">
+        <button class="test-btn" onclick="testModal('stainless')">Test Stainless Steel</button>
+        <button class="test-btn" onclick="testModal('hccr')">Test High Carbon Chrome</button>
+        <button class="test-btn" onclick="testModal('titanium')">Test Titanium</button>
+        <button class="test-btn" onclick="testModal('copper')">Test Copper</button>
+        <button class="test-btn" onclick="testModal('nickel')">Test Nickel Alloy</button>
+        <button class="test-btn" onclick="testModal('tungsten')">Test Tungsten</button>
+    </div>
+    
+    <!-- Material Modals Container -->
+    <div id="material-modals-container"></div>
+    
+    <script src="materials-config.js"></script>
+    <script>
+        function updateStatus(message) {
+            document.getElementById('status-text').textContent = message;
+        }
+        
+        function testModal(material) {
+            if (window.openMaterialModal) {
+                window.openMaterialModal(material);
+            } else {
+                updateStatus('Modal system not ready yet');
+            }
+        }
+        
+        // Load all material modals
+        function loadMaterialModals() {
+            const container = document.getElementById('material-modals-container');
+            const materials = window.MATERIALS_CONFIG || [];
+            let loadedModals = 0;
+            
+            if (materials.length === 0) {
+                updateStatus('No materials configuration found');
+                return;
+            }
+            
+            updateStatus(`Loading ${materials.length} modals...`);
+            
+            materials.forEach(material => {
+                fetch(`modals/${material.modalFile}`)
+                    .then(res => res.text())
+                    .then(html => {
+                        container.innerHTML += html;
+                        loadedModals++;
+                        
+                        updateStatus(`Loaded ${loadedModals}/${materials.length} modals`);
+                        
+                        // Initialize modal functionality when all modals are loaded
+                        if (loadedModals === materials.length) {
+                            updateStatus('All modals loaded! Ready to test.');
+                            if (window.initMaterialModals) {
+                                window.initMaterialModals();
+                            }
+                        }
+                    })
+                    .catch(err => {
+                        console.warn(`Could not load modal for ${material.id}:`, err);
+                        loadedModals++;
+                        updateStatus(`Error loading ${material.id}, ${loadedModals}/${materials.length} processed`);
+                        
+                        if (loadedModals === materials.length) {
+                            updateStatus('Modal loading complete (some errors occurred)');
+                            if (window.initMaterialModals) {
+                                window.initMaterialModals();
+                            }
+                        }
+                    });
+            });
+        }
+        
+        // Load modals after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadMaterialModals);
+        } else {
+            loadMaterialModals();
+        }
+    </script>
+    
+    <!-- Include our modal system after the materials are loaded -->
+    <script>
+        // Simplified modal system for testing
+        (function() {
+            let currentModal = null;
+            
+            function findModalElement(materialType) {
+                const modalMap = {
+                    'stainless': 'stainless-modal',
+                    'hccr': 'hccr-modal', 
+                    'titanium': 'titanium-modal',
+                    'copper': 'copper-modal',
+                    'nickel': 'nickel-modal',
+                    'tungsten': 'tungsten-modal'
+                };
+                
+                const modalId = modalMap[materialType];
+                return modalId ? document.getElementById(modalId) : null;
+            }
+            
+            function openModal(materialType) {
+                const modal = findModalElement(materialType);
+                if (!modal) {
+                    updateStatus(`Modal not found for material: ${materialType}`);
+                    return;
+                }
+                
+                modal.style.opacity = '1';
+                modal.style.visibility = 'visible';
+                modal.style.zIndex = '1000';
+                currentModal = modal;
+                
+                updateStatus(`Opened ${materialType} modal`);
+                
+                // Simple close on click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+            
+            function closeModal() {
+                if (currentModal) {
+                    currentModal.style.opacity = '0';
+                    currentModal.style.visibility = 'hidden';
+                    updateStatus('Modal closed');
+                    currentModal = null;
+                }
+            }
+            
+            // Global function
+            window.openMaterialModal = openModal;
+            window.initMaterialModals = function() {
+                updateStatus('Modal system initialized and ready!');
+            };
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,568 @@
+/* =====================
+   Base Modal Styles
+   Shared styles for all material modals
+   ===================== */
+
+:root {
+  --modal-open-duration: 0.75s;
+  --modal-close-duration: 0.50s;
+  /* Base modal text colors - applied to all modals */
+  --modal-text-primary: #f5f5f7;
+}
+
+/* Base text color styles for all modals */
+.modal-header h1 {
+  color: var(--modal-text-primary);
+}
+
+.modal-hero-text h2 {
+  color: var(--modal-text-primary);
+}
+
+.modal-hero-text p {
+  color: var(--modal-text-primary);
+}
+
+.modal-image-item h3 {
+  color: var(--modal-text-primary);
+}
+
+.modal-image-item p {
+  color: var(--modal-text-primary);
+}
+
+.grades-section h3 {
+  color: var(--modal-text-primary);
+}
+
+.grade-column {
+  color: var(--modal-text-primary);
+}
+
+/* Initially hide all modals */
+#material-modals-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(#181818 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  padding: 40px 20px 40px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* No transition by default - will be set dynamically */
+}
+
+/* Opening animation - fade in background and blur */
+#material-modals-container .modal-overlay.modal-opening {
+  opacity: 1;
+  visibility: visible;
+  transition: backdrop-filter var(--modal-open-duration) ease;
+}
+
+/* Visible state - maintain opacity */
+#material-modals-container .modal-overlay.modal-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Closing animation - fade out only */
+#material-modals-container .modal-overlay.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--modal-close-duration) ease, visibility var(--modal-close-duration) ease;
+}
+
+.modal-container {
+  background: #1d1d1f;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(100vh);
+  min-height: fit-content;
+  /* No transition by default - will be set dynamically */
+}
+
+/* Opening animation - slide up from bottom */
+#material-modals-container .modal-opening .modal-container {
+  transform: translateY(0);
+  transition: transform var(--modal-open-duration) cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+/* Visible state - maintain position */
+#material-modals-container .modal-visible .modal-container {
+  transform: translateY(0);
+}
+
+/* Closing animation - no movement, just stay in place */
+#material-modals-container .modal-closing .modal-container {
+  transform: translateY(0);
+  /* No transition on container during close */
+}
+
+.modal-close-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1010; /* Higher than modal overlay */
+  height: 0;
+}
+
+.modal-close {
+  position: absolute;
+  left: 50%;
+  /* Center vertically in the 100px padding: (100px - 64px)/2 + 20 = 36px from bottom */
+  bottom: 72px;
+  transform: translateX(-50%) scale(0);
+  background: rgba(45, 45, 47, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 8px solid transparent;
+  color: #f5f5f7;
+  cursor: pointer;
+  padding: 13.6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.2s ease;
+  will-change: transform, opacity;
+}
+
+.modal-close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 72px;
+  background: #1e90ff; /* Solid circle */
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+  z-index: -1; /* Ensure it stays behind the close button */
+}
+
+.modal-close-container.visible .modal-close {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-close-container.visible .modal-close::before {
+  animation: border-expand 0.7s ease-out, border-shrink 0.25s ease-in 0.7s;
+}
+
+@keyframes border-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 1;
+  }
+}
+
+@keyframes border-shrink {
+  0% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Modal Container and Content Styles */
+
+.highlight {
+  color: var(--modal-highlight, #86868B);
+  font-weight: bold;
+}
+.modal-container {
+  padding-bottom: 0; /* Remove base padding since material-info will handle spacing */
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 32px 0px;
+  background: #000;
+  border-radius: 18px 18px 0 0;
+}
+
+.modal-header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 0;
+}
+
+.modal-hero {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  max-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.modal-hero-image {
+  object-fit: contain;
+  min-height: 20vh;
+  max-height: 50vh;
+}
+
+.modal-body {
+  padding: 32px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Desktop: Hero text padding should match modal-body padding */
+@media (min-width: 769px) {
+  .modal-hero-text {
+    padding: 0 32px !important; /* Match modal-body horizontal padding on desktop */
+  }
+}
+
+.modal-images {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-image-item {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #2c2c2e;
+}
+
+.modal-image-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-description {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-description p {
+  color: #f5f5f7;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.grade-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space between items */
+  max-width: 120px; /* controls width of column */
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 1rem;
+}
+
+.grade-column span {
+  white-space: nowrap; /* prevents awkward line breaks */
+}
+
+/* Material info section: Available grades (black background, full width) */
+.material-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; /* Space items evenly to center them in their halves */
+  gap: 0; /* Remove gap to allow proper centering */
+  background: #000;
+  border-radius: 0 0 18px 18px; /* Only bottom corners rounded to match modal */
+  overflow: visible;
+  margin: 0; /* No margins needed - this is now a direct child of modal-content */
+  padding: 20px 32px 120px 32px; /* Match modal-body padding, plus space for close button */
+  max-height: none;
+  min-height: 20vh;
+}
+
+.material-info img {
+  order: 1;
+  max-height: 15vh;
+  height: 15vh;
+  width: auto;
+  object-fit: contain;
+  border-radius: 0;
+  flex-shrink: 0;
+  flex: 1; /* Take up half the space */
+  display: flex;
+  justify-content: center; /* Center in its half */
+}
+
+.material-info .grades-section {
+  order: 2;
+  flex: 1; /* Take up half the space */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left-aligned to match columns */
+  justify-content: center;
+}
+
+.grade-columns {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start; /* Left-aligned to match heading */
+  margin-top: 0.25rem; /* Tighter spacing with heading */
+}
+
+.grades-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: left; /* Left aligned to match columns */
+}
+
+
+/* Mobile Modal Styles */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px 10px 5px 10px;
+  }
+  
+  .modal-header {
+    padding: 2rem 20px 16px 20px;
+  }
+  
+  .modal-header h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+    padding: 0 10px !important;
+    white-space: nowrap !important; /* Keep on one line */
+    overflow: visible !important; /* Allow text to be visible */
+    text-overflow: clip !important; /* No ellipses */
+    line-height: 1.2 !important; /* Tighter line height for better fit */
+  }
+
+  .modal-body {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    background: #1d1d1f !important; /* Match modal container background */
+    padding-top: 30px !important; /* Add padding between grey section and first image */
+  }
+
+  /* Mobile hero section styles */
+  .modal-hero {
+    flex-direction: column !important;
+    text-align: left;
+    align-items: stretch;
+    max-height: none;
+    padding: 0 !important;
+    background: #000 !important; /* Keep black background for hero section only */
+  }
+  
+  .modal-hero-text, 
+  .modal-hero-image {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .modal-hero-text {
+    padding: 0 20px !important; /* Match modal-body horizontal padding on mobile */
+    box-sizing: border-box !important;
+    background: #1d1d1f !important; /* Match modal-body background for seamless appearance */
+    border-radius: 0; /* No rounded corners */
+  }
+
+  /* Higher specificity mobile hero text padding for all modals */
+  #nickel-modal .modal-hero-text,
+  #copper-modal .modal-hero-text,
+  #stainless-modal .modal-hero-text,
+  #titanium-modal .modal-hero-text,
+  #tungsten-modal .modal-hero-text,
+  #hccr-modal .modal-hero-text {
+    padding: 0 30px !important; /* Match total effective padding of modal-body + image-item */
+  }
+  
+  .modal-hero-image {
+    max-height: 50vh;
+    min-height: 20vh;
+    padding: 0 !important;
+  }
+  
+  .modal-description {
+    order: -1;
+  }
+  
+  .modal-image-item img {
+    height: 150px;
+  }
+
+  /* Mobile: First image item - move h3 to appear after image - High specificity override */
+  #nickel-modal .modal-image-item:first-child img,
+  #copper-modal .modal-image-item:first-child img,
+  #stainless-modal .modal-image-item:first-child img,
+  #titanium-modal .modal-image-item:first-child img,
+  #tungsten-modal .modal-image-item:first-child img,
+  #hccr-modal .modal-image-item:first-child img {
+    order: 1 !important; /* Image first */
+  }
+  
+  #nickel-modal .modal-image-item:first-child h3,
+  #copper-modal .modal-image-item:first-child h3,
+  #stainless-modal .modal-image-item:first-child h3,
+  #titanium-modal .modal-image-item:first-child h3,
+  #tungsten-modal .modal-image-item:first-child h3,
+  #hccr-modal .modal-image-item:first-child h3 {
+    order: 2 !important; /* h3 after image */
+    margin-top: 16px !important; /* Add some spacing after image */
+  }
+  
+  #nickel-modal .modal-image-item:first-child p,
+  #copper-modal .modal-image-item:first-child p,
+  #stainless-modal .modal-image-item:first-child p,
+  #titanium-modal .modal-image-item:first-child p,
+  #tungsten-modal .modal-image-item:first-child p,
+  #hccr-modal .modal-image-item:first-child p {
+    order: 3 !important; /* paragraph last */
+  }
+  
+  .modal-close {
+    /* Center vertically in the 80px padding: (80px - 61.2px)/2 + 10 = 19.4px from bottom */
+    bottom: 20px;
+  }
+
+  /* Mobile sticky close button animations - same as desktop */
+  .modal-close-sticky .modal-close::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    background: #1e90ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    pointer-events: none;
+    animation: none;
+    z-index: -1;
+  }
+
+  .modal-close-sticky.visible .modal-close {
+    transform: translateX(-50%) scale(1) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .modal-close-sticky.visible .modal-close::before {
+    animation: border-expand 0.7s ease-out, border-shrink 0.25s ease-in 0.7s;
+  }
+
+  /* Mobile: Smaller blue highlight circle - 15% smaller than desktop */
+  @keyframes border-expand {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.445); /* 15% smaller than 1.7 */
+      opacity: 1;
+    }
+  }
+
+  @keyframes border-shrink {
+    0% {
+      transform: translate(-50%, -50%) scale(1.445); /* 15% smaller than 1.7 */
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+  }
+
+  /* Mobile material info section styling */
+  .material-info {
+    margin: 0 !important; /* No margins needed - this is now a direct child of modal-content */
+    padding: 16px 20px 100px 20px !important; /* Match mobile modal-body padding, plus close button space */
+    max-height: none !important;
+    min-height: auto !important;
+    background: #000 !important;
+    border-radius: 0 0 18px 18px !important; /* Bottom corners rounded on mobile too */
+    flex-direction: row !important; /* Keep as row even on mobile */
+  }
+
+  .material-info img {
+    height: 100% !important; /* Same height as the grades list */
+    width: auto !important;
+    max-width: 30% !important; /* Limit width to be proportional to the list */
+    object-fit: contain !important;
+    align-self: center !important;
+    order: 1 !important;
+    flex-shrink: 0;
+  }
+
+  .material-info .grades-section {
+    order: 2 !important;
+    align-items: flex-start !important;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0 !important; /* Remove padding to align with icon */
+  }
+
+  /* Mobile grades layout */
+  .grade-columns {
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: flex-start;
+    order: 2; /* Ensure this comes after the heading */
+    margin-top: 0 !important; /* Remove top margin for tighter spacing */
+  }
+
+  /* Mobile: ensure consistent spacing in grade columns */
+  .grade-column {
+    gap: 0.5rem !important; /* Consistent gap for all items */
+  }
+
+  .grade-column span {
+    margin: 0 !important; /* Remove any extra margins */
+  }
+
+  .grades-section h3 {
+    text-align: left !important; /* Left align the heading on mobile to match columns */
+    order: 1; /* Ensure heading comes first */
+    margin-bottom: 0.1rem !important; /* Much tighter spacing */
+    width: 100%;
+    display: block;
+    font-size: 1.3rem; /* Consistent with desktop */
+    font-weight: 600;
+  }
+}

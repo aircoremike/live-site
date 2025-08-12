@@ -18,15 +18,21 @@
 <body>
   <div id="navbar-container"></div>
   <div class="main-content">
-    <section id="materials-hero" class="materials-hero section-fade">
-      <h1>Materials</h1>
-      <p>
-        Aircore Bearings has developed a proprietary manufacturing process that enables the bonding of 
-        materials once considered unweldable. This approach delivers greater stability and a more uniform, 
-        balanced structure than traditional welding methods. No other supplier offers hollow balls in 
-        such a broad range of materials with the same level of quality. <strong>Browse our material library below.</strong>
-      </p>
-    </section>
+    <main>
+      <section id="materials-hero" class="materials-hero section-fade">
+        <h1>Materials</h1>
+        <p>
+          Aircore Bearings has developed a proprietary manufacturing process that enables the bonding of 
+          materials once considered unweldable. This approach delivers greater stability and a more uniform, 
+          balanced structure than traditional welding methods. No other supplier offers hollow balls in 
+          such a broad range of materials with the same level of quality.<br>
+          <br>
+          <strong>Browse our material library below.</strong>
+        </p>
+        <div class="materials-hero-image-wrapper">
+          <img src="assets/materials-hero.webp" alt="Materials Hero" class="materials-hero-image" style="width:100%;max-width:900px;border-radius:1.25rem;box-shadow:0 4px 32px 0 rgba(0,0,0,0.10);margin:2rem auto 2.5rem auto;display:block;" loading="lazy">
+        </div>
+      </section>
     <div class="materials-carousel-bg">
       <div class="materials-carousel">
         <div class="carousel-track">
@@ -39,9 +45,12 @@
                 <div class="slide-desc">
                   <p>High-strength, corrosion-resistant steels designed for bearings in demanding environments.</p>
                 </div>
+                <div class="slide-button">
+                  <button class="learn-more-btn" data-material="stainless">Learn More</button>
+                </div>
               </div>
               <div class="slide-image">
-                <img src="assets/stainless.png" alt="Steel">
+                <img src="assets/stainless.webp" alt="Steel">
               </div>
             </div>
           </div>
@@ -55,9 +64,12 @@
                   <p>Reliable hardness and wear resistance, high load capacity, and tight dimensional stability
                      for precision bearing systems.</p>
                 </div>
+                <div class="slide-button">
+                  <button class="learn-more-btn" data-material="hccr">Learn More</button>
+                </div>
               </div>
               <div class="slide-image">
-                <img src="assets/highcarbonchrome.png" alt="High Carbon Chrome Steel">
+                <img src="assets/highcarbonchrome.webp" alt="High Carbon Chrome Steel">
               </div>
             </div>
           </div>
@@ -70,9 +82,12 @@
                 <div class="slide-desc">
                   <p>Remarkable strength-to-weight ratio, excellent corrosion resistance, and superior fatigue life.</p>
                 </div>
+                <div class="slide-button">
+                  <button class="learn-more-btn" data-material="titanium">Learn More</button>
+                </div>
               </div>
               <div class="slide-image">
-                <img src="assets/titanium.png" alt="Titanium">
+                <img src="assets/titanium.webp" alt="Titanium">
               </div>
             </div>
           </div>
@@ -84,11 +99,14 @@
                 </div>
                 <div class="slide-desc">
                   <p>Exceptional electrical and thermal conductivity, excellent formability, 
-                    and inherent antimicrobial properties. </p>
+                    and inherent antimicrobial properties.</p>
+                </div>
+                <div class="slide-button">
+                  <button class="learn-more-btn" data-material="copper">Learn More</button>
                 </div>
               </div>
               <div class="slide-image">
-                <img src="assets/copper.png" alt="Copper">
+                <img src="assets/copper.webp" alt="Copper">
               </div>
             </div>
           </div>
@@ -102,9 +120,12 @@
                   <p>Superior thermal and chemical stability, excellent fatigue resistance, 
                     and performance retention in extreme environments.</p>
                 </div>
+                <div class="slide-button">
+                  <button class="learn-more-btn" data-material="nickel">Learn More</button>
+                </div>
               </div>
               <div class="slide-image">
-                <img src="assets/nickelalloy.png" alt="Nickel Alloys">
+                <img src="assets/nickelalloy.webp" alt="Nickel Alloys">
               </div>
             </div>
           </div>
@@ -112,15 +133,18 @@
             <div class="slide-content">
               <div class="slide-text">
                 <div class="slide-title">
-                  <h2>Tungsten</h2>
+                  <h2>Tungsten Carbide</h2>
                 </div>
                 <div class="slide-desc">
                   <p>Outstanding density and strength, extreme heat resistance, 
                     and excellent wear and creep performance.</p>
                 </div>
+                <div class="slide-button">
+                  <button class="learn-more-btn" data-material="tungsten">Learn More</button>
+                </div>
               </div>
               <div class="slide-image">
-                <img src="assets/tungsten.png" alt="Tungsten">
+                <img src="assets/tungsten.webp" alt="Tungsten">
               </div>
             </div>
           </div>
@@ -131,26 +155,14 @@
         </div>
       </div>
     </div>
-    <!-- Stainless Steel Modal (now a section, not a div with overlay) -->
-    <section class="modal" id="steelModal" aria-hidden="true">
-      <div class="modal-content">
-        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
-        <h2>Stainless Steel Details</h2>
-        <div class="checkerboard">
-          <div class="checker-item checker-img"><img src="assets/c5-galaxy_1280.jpg" alt="C-5 Galaxy"></div>
-          <div class="checker-item checker-img"><img src="assets/c17-globemaster-iii_1280.jpg" alt="C-17 Globemaster"></div>
-          <div class="checker-item checker-img"><img src="assets/pallet-drop_1280.jpg" alt="Packet Drop"></div>
-          <div class="checker-item">Corrosion Resistance</div>
-          <div class="checker-item">High Strength</div>
-          <div class="checker-item">Precision Engineering</div>
-          <div class="checker-item">Applications: Aerospace, Medical, Industrial</div>
-          <div class="checker-item">Grades: 440C, 304, 316, 630, and more</div>
-        </div>
-      </div>
-    </section>
   </div>
   <div id="footer-container"></div>
+  
+  <!-- Material Modals Container -->
+  <div id="material-modals-container"></div>
+  
   <div id="site-overlay" class="overlay"></div>
+  <script src="materials-config.js"></script>
   <script src="script.js"></script>
   <script>
     function loadPartial(id, url, callback) {
@@ -161,10 +173,52 @@
           if (callback) callback();
         });
     }
+    
+    // Load navbar and footer
     loadPartial('navbar-container', 'navbar.html', function() {
       if (window.initNavbarScripts) window.initNavbarScripts();
     });
     loadPartial('footer-container', 'footer.html');
+    
+    // Load all material modals
+    function loadMaterialModals() {
+      const container = document.getElementById('material-modals-container');
+      const materials = window.MATERIALS_CONFIG || [];
+      let loadedModals = 0;
+      
+      if (materials.length === 0) {
+        console.warn('No materials configuration found');
+        return;
+      }
+      
+      materials.forEach(material => {
+        fetch(`modals/${material.modalFile}`)
+          .then(res => res.text())
+          .then(html => {
+            container.innerHTML += html;
+            loadedModals++;
+            
+            // Initialize modal functionality when all modals are loaded
+            if (loadedModals === materials.length && window.initMaterialModals) {
+              window.initMaterialModals();
+            }
+          })
+          .catch(err => {
+            console.warn(`Could not load modal for ${material.id}:`, err);
+            loadedModals++;
+            if (loadedModals === materials.length && window.initMaterialModals) {
+              window.initMaterialModals();
+            }
+          });
+      });
+    }
+    
+    // Load modals after DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadMaterialModals);
+    } else {
+      loadMaterialModals();
+    }
   </script>
 </body>
 </html>

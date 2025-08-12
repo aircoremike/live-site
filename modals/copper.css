@@ -1,0 +1,353 @@
+/* =====================
+   Copper Modal Styles
+   Specific styling for the copper modal
+   ===================== */
+
+/* Import base modal styles */
+@import url('base-modal.css');
+
+/* Copper specific colors and styling */
+#copper-modal {
+  --modal-highlight: #B16438;
+  --modal-accent: #ffa500;
+}
+
+/* Custom header styling for copper */
+#copper-modal .modal-header {
+  background: #000;
+}
+
+#copper-modal .modal-header h1 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Custom hero section for copper */
+#copper-modal .modal-hero {
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+#copper-modal .modal-hero-image {
+  align-self: flex-end;
+  object-fit: cover;
+  object-position: bottom;
+  margin-bottom: 0;
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+#copper-modal .modal-hero-text {
+  align-self: center;
+  padding-bottom: 2rem;
+}
+
+#copper-modal .modal-hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#copper-modal .modal-hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* First modal image item with text layout - C5 Galaxy */
+#copper-modal .modal-image-item:first-child {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+  align-items: center;
+}
+
+#copper-modal .modal-image-item:first-child img {
+  height: 200px;
+  min-height: 80vh;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  align-self: center;
+  max-width: 45%;
+  order: 2;
+}
+
+#copper-modal .modal-image-item:first-child .text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 1;
+  padding: 0 20px;
+}
+
+#copper-modal .modal-image-item:first-child p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+  overflow: visible;
+  width: 100%;
+}
+
+#copper-modal .modal-image-item:first-child h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+#copper-modal .modal-image-item:first-child p strong {
+  display: inline;
+}
+
+/* Second item: C17 Globemaster (image left, text right) */
+#copper-modal .modal-image-item:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#copper-modal .modal-image-item:nth-child(2) img {
+  order: 1;
+  flex: 1;
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#copper-modal .modal-image-item:nth-child(2) p {
+  order: 2;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  align-self: center;
+}
+
+#copper-modal .modal-image-item:nth-child(2) p strong {
+  display: inline;
+}
+
+/* Third item: Pallet Drop (text left, image right) */
+#copper-modal .modal-image-item:nth-child(3) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#copper-modal .modal-image-item:nth-child(3) img {
+  order: 2;
+  flex: 1;
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#copper-modal .modal-image-item:nth-child(3) p {
+  order: 1;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  align-self: center;
+}
+
+/* Fourth item: CV Joint (image left, text right) */
+#copper-modal .modal-image-item:nth-child(4) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#copper-modal .modal-image-item:nth-child(4) img {
+  order: 1;
+  flex: 1;
+  border-radius: 12px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#copper-modal .modal-image-item:nth-child(4) p {
+  order: 2;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  align-self: center;
+}
+
+/* Desktop grades - 2 columns with 2 rows each */
+#copper-modal .grade-column:nth-child(1) {
+  order: 1;
+}
+#copper-modal .grade-column:nth-child(2) {
+  order: 2;
+}
+
+/* Ensure proper alignment for copper modal grades section */
+#copper-modal .material-info .grades-section {
+  align-items: flex-start;
+}
+
+#copper-modal .grade-columns {
+  justify-content: flex-start;
+}
+
+#copper-modal .grades-section h3 {
+  text-align: left;
+}
+
+/* Custom container styling */
+#copper-modal .modal-container {
+  box-shadow: 0 8px 32px rgba(184, 115, 51, 0.2);
+}
+
+/* Custom learn more button styling */
+#copper-modal .learn-more-btn {
+  background: linear-gradient(90deg, var(--modal-accent) 0%, var(--modal-highlight) 100%);
+  color: #1d1d1f;
+  font-weight: 700;
+}
+
+#copper-modal .learn-more-btn:hover {
+  background: linear-gradient(90deg, var(--modal-highlight) 0%, var(--modal-accent) 100%);
+  color: #1d1d1f;
+  box-shadow: 0 4px 18px rgba(255, 99, 71, 0.3);
+}
+
+/* Phone Modal Styles */
+@media (max-width: 768px) {
+  /* Override modal overlay padding to have only 10px on each side */
+  #copper-modal.modal-overlay {
+    padding: 10px 10px 5px 10px !important;
+  }
+
+  /* Make h2 larger */
+  #copper-modal .modal-hero-text h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Make h3 larger */
+  #copper-modal .modal-image-item:first-child h3 {
+    font-size: 1.4rem !important;
+  }
+
+  #copper-modal .modal-hero-image {
+    max-height: 50vh;
+    min-height: 20vh;
+    padding: 0 !important;
+  }
+
+  /* Mobile layout for all modal image items - image above, text below */
+  #copper-modal .modal-image-item {
+    flex-direction: column !important;
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  #copper-modal .modal-image-item:not(:first-child) img {
+    order: 1 !important;
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    max-width: 100%;
+  }
+
+  #copper-modal .modal-image-item:not(:first-child) p {
+    padding: 0 !important;
+  }
+
+  /* Override for first-child image to be 90vh on mobile */
+  #copper-modal .modal-image-item:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+    padding: 0 10px;
+    overflow: visible;
+    align-items: flex-start;
+  }
+
+  #copper-modal .modal-image-item:first-child .text-content {
+    width: 100%;
+    display: contents;
+  }
+
+  #copper-modal .modal-image-item:first-child h3 {
+    order: 2 !important; /* h3 after image to match base modal pattern */
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0 !important;
+  }
+
+  #copper-modal .modal-image-item:first-child img {
+    order: 1 !important; /* Image first to match base modal pattern */
+    height: auto !important;
+    min-height: 90vh !important;
+    object-fit: cover !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    aspect-ratio: 9/16 !important;
+  }
+
+  #copper-modal .modal-image-item:first-child p {
+    order: 3 !important;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #copper-modal .modal-image-item:not(:first-child) p,
+  #copper-modal .modal-image-item:not(:first-child) .grades-section {
+    order: 2 !important;
+    flex: none;
+    align-self: flex-start !important;
+  }
+}
+
+/* Tablet Modal Styles */
+@media (min-width: 600px) and (max-width: 1024px) {
+  #copper-modal .modal-hero {
+    flex-direction: row;
+    text-align: left;
+  }
+  #copper-modal .modal-hero-text,
+  #copper-modal .modal-hero-image {
+    width: 50%;
+    margin: 0;
+  }
+  #copper-modal .modal-hero-image {
+    max-height: 40vh;
+    min-height: 20vh;
+  }
+}
