@@ -262,14 +262,14 @@
 }
 
 #stainless-modal .modal-image-item:first-child h3 {
-    order: 1 !important; /* H3 first */
+    order: 2 !important; /* H3 second */
     width: 100%;
     margin-bottom: 1rem; /* Standard spacing */
     padding: 0 !important;
 }
 
 #stainless-modal .modal-image-item:first-child img {
-    order: 2 !important; /* Image second */
+    order: 1 !important; /* Image first */
     height: auto !important; /* Let aspect ratio determine height */
     min-height: 90vh !important; /* Minimum 90vh height */
     object-fit: cover !important;

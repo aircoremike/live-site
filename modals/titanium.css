@@ -263,15 +263,8 @@
     display: contents; /* Allow children to participate in parent's flex layout */
 }
 
-#titanium-modal .modal-image-item:first-child h3 {
-    order: 1 !important; /* H3 first */
-    width: 100%;
-    margin-bottom: 1rem; /* Standard spacing */
-    padding: 0 !important;
-}
-
 #titanium-modal .modal-image-item:first-child img {
-    order: 2 !important; /* Image second */
+    order: 1 !important; /* Image first */
     height: auto !important; /* Let aspect ratio determine height */
     min-height: 90vh !important; /* Minimum 90vh height */
     object-fit: cover !important;
@@ -279,6 +272,13 @@
     max-width: 100%;
     margin: 0; /* No extra margin */
     aspect-ratio: 9/16 !important; /* Tall aspect ratio */
+}
+
+#titanium-modal .modal-image-item:first-child h3 {
+    order: 2 !important; /* H3 second (below image) */
+    width: 100%;
+    margin-bottom: 1rem; /* Standard spacing */
+    padding: 0 !important;
 }
 
 #titanium-modal .modal-image-item:first-child p {
