@@ -35,7 +35,8 @@
       </section>
     <div class="materials-carousel-bg">
       <div class="materials-carousel">
-        <div class="carousel-track">
+        <div class="carousel-track-container">
+          <div class="carousel-track">
           <div class="carousel-slide" data-slide="0">
             <div class="slide-content">
               <div class="slide-text">
@@ -148,10 +149,21 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
-        <div class="carousel-arrows">
-          <button class="carousel-arrow carousel-arrow-left" id="carouselArrowLeft" aria-label="Previous slide"><span>&#8249;</span></button>
-          <button class="carousel-arrow carousel-arrow-right" id="carouselArrowRight" aria-label="Next slide"><span>&#8250;</span></button>
+        <div class="carousel-navigation">
+          <div class="carousel-arrows">
+            <button class="carousel-arrow carousel-arrow-left" id="carouselArrowLeft" aria-label="Previous slide">
+              <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6" />
+              </svg>
+            </button>
+            <button class="carousel-arrow carousel-arrow-right" id="carouselArrowRight" aria-label="Next slide">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 18L15 12L9 6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
