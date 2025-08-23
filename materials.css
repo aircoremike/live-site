@@ -36,7 +36,7 @@ body {
 }
 .materials-hero h1 {
   color: #f5f5f7;
-  font-size: var(--h1-font-size-desktop) !important;
+  font-size: var(--h1-font-size-desktop);
   line-height: 1.2;
   margin: var(--content-top-spacing-desktop) 0 2.5rem 0;
   padding: 0;
@@ -60,11 +60,11 @@ body {
     padding: 0 0.5rem 2rem 0.5rem;
   }
   .materials-hero h1 {
-    font-size: var(--h1-font-size-mobile) !important;
+    font-size: var(--h1-font-size-mobile);
     margin: var(--content-top-spacing-mobile) 0 2rem 0;
   }
   .materials-hero p {
-    font-size: var(--p-font-size-mobile) !important;
+    font-size: var(--p-font-size-mobile);
     line-height: 1.5;
     margin: 0 0 1.2em 0;
     text-align: left;
@@ -299,9 +299,9 @@ body {
     justify-content: flex-start;
   }
   
-  .carousel-slide {
-    min-width: 85vw;
-    max-width: 85vw;
+  .materials-carousel .carousel-slide {
+    min-width: 80vw;
+    max-width: 80vw;
     height: 100%;
     min-height: auto;
     flex-direction: column;
@@ -321,158 +321,85 @@ body {
   }
   
   .slide-text {
-    padding: 1.5rem 1.5rem 0 1.5rem !important; /* Remove bottom padding */
-    flex-shrink: 0 !important; /* Don't allow it to shrink */
-    flex-grow: 0 !important; /* Don't allow it to grow */
-    flex-basis: auto !important; /* Size based on content only */
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.5rem !important; /* Tight spacing between elements */
+    padding: 1.5rem 1.5rem 0 1.5rem; /* Remove bottom padding */
+    flex-shrink: 0; /* Don't allow it to shrink */
+    flex-grow: 0; /* Don't allow it to grow */
+    flex-basis: auto; /* Size based on content only */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Tight spacing between elements */
   }
   
   .slide-title h2 {
-    font-size: 1.4rem !important;
-    margin: 0 !important; /* Remove all margin */
+    font-size: 1.4rem;
+    margin: 0; /* Remove all margin */
   }
   
   .slide-desc p {
-    font-size: 1.1rem !important;
-    line-height: 1.4 !important;
-    margin: 0 !important;
-    padding-left: 0 !important; /* Remove left padding for mobile */
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0;
+    padding-left: 1rem; /* Indent relative to title */
+    margin-bottom: 1rem; /* Add space below description */
   }
   
   .slide-button {
-    padding-left: 0 !important; /* Remove left padding for mobile */
-    margin: 0 !important; /* Remove all margin */
+    padding-left: 0; /* Remove left padding for mobile */
+    margin: 0; /* Remove all margin */
   }
   
   .slide-image {
-    flex: 1 !important;
-    align-items: flex-end !important; /* Align to bottom */
-    justify-content: flex-end !important; /* Align to right */
-    padding: 0 !important; /* Remove any padding */
-    margin: 0 !important; /* Remove any margin */
-    overflow: hidden !important; /* Ensure image doesn't overflow */
-    border-bottom-left-radius: 1.2rem !important; /* Preserve bottom left corner too */
-    border-bottom-right-radius: 1.2rem !important; /* Preserve bottom right corner */
-    min-height: 0 !important; /* Allow flex shrinking */
+    flex: 1;
+    align-items: flex-end; /* Align to bottom */
+    justify-content: flex-end; /* Align to right */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    overflow: hidden; /* Ensure image doesn't overflow */
+    border-bottom-left-radius: 1.2rem; /* Preserve bottom left corner too */
+    border-bottom-right-radius: 1.2rem; /* Preserve bottom right corner */
+    min-height: 0; /* Allow flex shrinking */
   }
   
   .slide-image img {
-    max-height: 100% !important;
-    max-width: 100% !important;
-    width: auto !important; /* Let width be determined by aspect ratio */
-    height: auto !important; /* Let height be determined by aspect ratio */
-    object-fit: contain !important; /* Shrink to fit container while maintaining aspect ratio */
-    object-position: bottom right !important; /* Position at bottom right */
-    border-bottom-left-radius: 1.2rem !important; /* Preserve both bottom corners */
-    border-bottom-right-radius: 1.2rem !important; /* Preserve both bottom corners */
+    max-height: 100%;
+    max-width: 100%;
+    width: auto; /* Let width be determined by aspect ratio */
+    height: auto; /* Let height be determined by aspect ratio */
+    object-fit: contain; /* Shrink to fit container while maintaining aspect ratio */
+    object-position: bottom right; /* Position at bottom right */
+    border-bottom-left-radius: 1.2rem; /* Preserve both bottom corners */
+    border-bottom-right-radius: 1.2rem; /* Preserve both bottom corners */
   }
 }
 
 /* =====================
-   TABLETS (Touch devices with larger screens) - Clean Implementation
+   TABLETS (Touch devices with larger screens) - Just hide navigation
    ===================== */
 
-/* Tablet Portrait - 15% taller slides with balanced spacing */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse) {
-  .materials-carousel-bg {
-    height: 50vh !important;
-    min-height: 400px !important; /* Reduced so it doesn't override the vh value */
-    max-height: 900px !important;
-    padding: 3rem 0 !important;
-  }
-  
-  .carousel-slide {
-    min-width: 75vw;
-    max-width: 75vw;
-    height: 500px; /* 15% taller than standard */
-    flex-direction: row;
-  }
-  
-  .slide-content {
-    flex-direction: row;
-    align-items: stretch;
-  }
-  
-  .slide-text {
-    flex: 0 0 55%;
-    padding: 1.5rem;
-    justify-content: flex-start;
-  }
-  
-  .slide-image {
-    flex: 1;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-bottom-right-radius: 1.2rem;
-    border-bottom-left-radius: 0;
-  }
-  
-  .slide-image img {
-    object-fit: contain;
-    object-position: bottom right;
-    border-bottom-right-radius: 1.2rem;
-    border-bottom-left-radius: 0;
-  }
-  
+/* All tablets - just hide navigation and use desktop sizing */
+@media (min-width: 769px) and (max-width: 1366px) and (hover: none) and (pointer: coarse) {
   .carousel-navigation {
     display: none;
   }
 }
 
-/* Tablet Landscape - Balanced spacing, proper centering */
-@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+/* Tablet Portrait - Fix slide width for narrower screens */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse) {
   .materials-carousel-bg {
-    height: 60vh !important;
-    min-height: 350px !important; /* Reduced so it doesn't override the vh value */
-    max-height: 800px !important;
-    padding: 4rem 0 !important; /* Equal padding for balanced spacing */
+    height: 30vh;
+    min-height: 400px;
   }
   
   .carousel-slide {
-    min-width: 70vw;
-    max-width: 70vw;
-    height: 420px;
-    flex-direction: row;
-  }
-  
-  .slide-content {
-    flex-direction: row;
-    align-items: stretch;
-  }
-  
-  .slide-text {
-    flex: 0 0 55%;
-    padding: 1.5rem;
-    justify-content: flex-start;
-  }
-  
-  .slide-image {
-    flex: 1;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-bottom-right-radius: 1.2rem;
-    border-bottom-left-radius: 0;
-  }
-  
-  .slide-image img {
-    object-fit: contain;
-    object-position: bottom right;
-    border-bottom-right-radius: 1.2rem;
-    border-bottom-left-radius: 0;
-  }
-  
-  .carousel-navigation {
-    display: none;
+    min-width: 80vw;
+    max-width: 80vw;
   }
 }
 
 /* Phones in landscape - side-by-side layout */
 @media (max-width: 768px) and (orientation: landscape) and (hover: none) {
   .carousel-slide {
-    flex-direction: row !important; /* Override column layout for landscape */
+    flex-direction: row; /* Override column layout for landscape */
     min-width: 90vw;
     max-width: 90vw;
     border-radius: 1.2rem;
@@ -481,7 +408,7 @@ body {
   }
   
   .slide-content {
-    flex-direction: row !important; /* Side-by-side layout */
+    flex-direction: row; /* Side-by-side layout */
     height: 100%;
     align-items: stretch;
   }
@@ -566,14 +493,6 @@ body {
 /* =====================
    SPECIFIC BREAKPOINTS - Simplified
    ===================== */
-
-/* Small phones in portrait - only adjust slide width */
-@media (max-width: 480px) and (orientation: portrait) and (hover: none) {
-  .carousel-slide {
-    min-width: 90vw;
-    max-width: 90vw;
-  }
-}
 
 /* Very short desktop windows */
 @media (max-height: 600px) and (hover: hover) {
@@ -660,10 +579,10 @@ body {
 
 /* Prevent body scroll when modal is open */
 body.modal-open {
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 /* Hide scrollbar completely when modal is open */
 html.modal-open {
-  overflow: hidden !important;
+  overflow: hidden;
 }

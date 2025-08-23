@@ -235,6 +235,13 @@
   object-fit: contain;
   min-height: 20vh;
   max-height: 50vh;
+  max-width: 50%;
+  flex: 1 0 auto;
+}
+
+.modal-hero-text {
+  flex: 1 1 40%;
+  min-width: 300px;
 }
 
 .modal-body {
@@ -248,6 +255,27 @@
 @media (min-width: 769px) {
   .modal-hero-text {
     padding: 0 32px !important; /* Match modal-body horizontal padding on desktop */
+  }
+}
+
+/* Extra large displays */
+@media (min-width: 1600px) {
+  .modal-container {
+    max-width: 1200px; /* Increase the modal size on large screens */
+  }
+  
+  .modal-hero {
+    height: auto;
+    max-height: 45vh; /* Slightly reduced to maintain proportions */
+  }
+  
+  .modal-hero-image {
+    max-width: 45%; /* Further limit width on very large displays */
+  }
+  
+  .modal-hero-text {
+    flex: 1 1 55%; /* Give more space to the text */
+    min-width: 400px; /* Ensure text has adequate space */
   }
 }
 
